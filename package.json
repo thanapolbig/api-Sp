@@ -1,0 +1,64 @@
+{
+  "name": "api-sampran",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start1": "PORT=7777  ORG=Org1 CA=ca1.example.com MSP=Org1MSP CONNECTTION=connection.1.json nodemon  node server.js ",
+    "start2": "PORT=9999  ORG=Org2 CA=ca2.example.com MSP=Org2MSP CONNECTTION=connection.2.json nodemon  node server.js ",
+    "start3": "PORT=11111 ORG=Org3 CA=ca3.example.com MSP=Org3MSP CONNECTTION=connection.3.json nodemon  node server.js ",
+    "eventOrg1": "USER=user1 PORT=7051  ORG=Org1 CONNECTTION=connection.1.json nodemon node monitor_event.js",
+    "eventOrg2": "USER=user1 PORT=9051  ORG=Org2 CONNECTTION=connection.2.json nodemon node monitor_event.js",
+    "eventOrg3": "USER=user1 PORT=11051 ORG=Org3 CONNECTTION=connection.3.json nodemon node monitor_event.js",
+    "localOrg1": "ROLE=developer PORT=7777  ORG=Org1 CA=ca1.example.com MSP=Org1MSP CONNECTTION=dev_config/connection.1.json  node server.js ",
+    "localOrg2": "ROLE=developer PORT=9999  ORG=Org2 CA=ca2.example.com MSP=Org2MSP CONNECTTION=dev_config/connection.2.json  node server.js ",
+    "localOrg3": "ROLE=developer PORT=11111 ORG=Org3 CA=ca3.example.com MSP=Org3MSP CONNECTTION=dev_config/connection.3.json  node server.js ",
+    "proTest": "ROLE=production PORT=7777  ORG=Org1 CA=ca1.example.com MSP=Org1MSP CONNECTTION=pro_config/connection.1.json node ./tests/automateMockDataTest.js ",
+    "proMonitorEvent": "USER=sthang02 PORT=7051  ORG=Org1 CONNECTTION=pro_config/connection.1.json node ./eventListener/monitor_event.js",
+    "proOrg1": "ROLE=production PORT=7777  ORG=Org1 CA=ca1.example.com MSP=Org1MSP CONNECTTION=pro_config/connection.1.json   node server.js ",
+    "proOrg2": "ROLE=production PORT=9999  ORG=Org2 CA=ca2.example.com MSP=Org2MSP CONNECTTION=pro_config/connection.2.json   node server.js ",
+    "proOrg3": "ROLE=production PORT=11111 ORG=Org3 CA=ca3.example.com MSP=Org3MSP CONNECTTION=pro_config/connection.3.json   node server.js ",
+    "generateUserTest": "ORG=Org1 CA=ca1.example.com MSP=Org1MSP CONNECTTION=dev_config/connection.1.json nodemon node generateUserTest.js ",
+    "1eventOrg1": "USER=user1 PORT=7051  ORG=Org1 CONNECTTION=dev_config/connection.1.json node monitor_event.js",
+    "1eventOrg2": "USER=user1 PORT=9051  ORG=Org2 CONNECTTION=dev_config/connection.2.json node monitor_event.js",
+    "1eventOrg3": "USER=user1 PORT=11051 ORG=Org3 CONNECTTION=dev_config/connection.3.json node monitor_event.js",
+    "teste2e": "ROLE=developer PORT=7777  ORG=Org1 CA=ca1.example.com MSP=Org1MSP CONNECTTION=dev_config/connection.1.json mocha --exit ./tests/test_e2e.js ",
+    "testunit": "ROLE=production PORT=9999  ORG=Org2 CA=ca2.example.com MSP=Org2MSP CONNECTTION=pro_config/connection.2.json jest --coverage --forceExit ./tests/test_func_unit.test.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/CSBlockchainKmitl/api-sampran.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/CSBlockchainKmitl/api-sampran/issues"
+  },
+  "homepage": "https://gitlab.com/CSBlockchainKmitl/api-sampran#readme",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "date-and-time": "^0.7.0",
+    "dateformat": "^3.0.3",
+    "express": "^4.17.1",
+    "fabric-ca-client": "^1.4.2",
+    "fabric-client": "^1.4.3",
+    "fabric-network": "^1.4.2",
+    "mariadb": "^2.0.5",
+    "mocha": "^6.2.0",
+    "mock-env": "^0.2.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.14",
+    "nodemon": "^1.19.4",
+    "sha256": "^0.2.0",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2",
+    "swagger-ui-express": "^4.0.6"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}

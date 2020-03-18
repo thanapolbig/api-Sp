@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "e67bb17b-1eae-4c51-afd2-5d419c8d4211",
+		"name": "sampran org1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:7777/registerUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"bc_user\": \"123\",\n\t\"OrgDepartment\":\"org1.department1\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:7777/registerUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"registerUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/IssueGarden",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bc_user\": \"123\",\n  \"garden\": 3,\n  \"gardenName\": \"สวน\",\n  \"owner\": \"JoJo\",\n  \"areas\": \"13ไร่ 2งาน\",\n  \"history_use_chemical\": {\n    \"date_final_use_chemical\": \"2019/7/3\",\n    \"status\": \"ว่าง\"\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/IssueGarden",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"IssueGarden"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/IssuePlanYearModel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"bc_user\":\"user1\",\n\"update_date\":\"2018-08-05\",\n\"username\":\"สมชาย1\",\n\"name\":\"นายสมชาย สมใจ\",\n\"group\":\"ไร่สมชาย\",\n\"garden\":\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/IssuePlanYearModel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"IssuePlanYearModel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/IssuePlanting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"bc_user\":\"user1\",\n   \"plant_id\":\"2\",\n   \"plant_name\":\"ลำไย\",\n   \"seedtype\" : \"aaaaaaaa\",\n   \"garden\":\"1\",\n   \"plant_date\":\"2018-08-03\",\n   \"planyear_date\":\"2018-08-03\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/IssuePlanting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"IssuePlanting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/IssueManagePlanting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bc_user\" : \"user1\",\n   \"production_id\": \"2\",\n   \"production_name\":\"รดน้ำ\",\n   \"production_date\":\"2018-08-04\",\n   \"production_factor\":\"ฝักบัว\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/IssueManagePlanting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"IssueManagePlanting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/IssueHarvest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"bc_user\":\"user1\",\n   \"harvesting_product_date_data\":\"2018-09-04\",\n   \"harvest_transform_check\" : \"yes\",\n   \"plant_id\":\"2\",\n   \"garden\":\"1\",\n   \"plant_date\":\"2018-08-03\",\n   \"quantity\":[\n   {\n       \"quantity_grade\":\"5\",\n       \"quantity_amount\":100,\n       \"quantity_amount_sell\":50\n   },\n   {\n       \"quantity_grade\":\"4\",\n       \"quantity_amount\":100,\n       \"quantity_amount_sell\":50\n   },\n  {\n       \"quantity_grade\":\"3\",\n       \"quantity_amount\":100,\n       \"quantity_amount_sell\":50\n   },\n   {\n       \"quantity_grade\":\"2\",\n       \"quantity_amount\":100,\n       \"quantity_amount_sell\":50\n   },\n   {\n       \"quantity_grade\":\"1\",\n       \"quantity_amount\":100,\n       \"quantity_amount_sell\":50\n   },\n    {\n       \"quantity_grade\":\"waste\",\n       \"quantity_amount\":100,\n       \"quantity_amount_sell\":50\n   }\n   ],\n   \"total\":[\n   {\n       \"total_grade\":\"good\",\n       \"total_amount\": 500\n   },\n   {\n       \"total_grade\":\"bad\",\n       \"total_amount\":100\n   }\n   ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/IssueHarvest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"IssueHarvest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/IssueSelling",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"bc_user\":\"sssss\",\n\"selling_grade\":\"A++\",\n\"selling_market_place\":\"rudsapa\",\n\"selling_amout\":\"656262\",\n\"garden\":\"2\",\n\"plant_date\":\"2018-08-03\",\n\"planyear_date\":\"2018-08-03\",\n\"plant_id\":\"2\"\n\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/IssueSelling",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"IssueSelling"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/queryGarden",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bc_user\": \"123\",\n  \"garden\": 3\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/queryGarden",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"queryGarden"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/queryPlanYearModel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"bc_user\":\"user1\",\n\"garden\":\"1\",\n\"date_planyear\":\"2018-08-05\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/queryPlanYearModel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"queryPlanYearModel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/queryPlanting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"bc_user\":\"user1\",\n   \"plant_id\":\"2\",\n   \"garden\":\"1\",\n   \"plant_date\":\"2018-08-03\",\n   \"planyear_date\":\"2018-08-03\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:7777/queryPlanting",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"queryPlanting"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

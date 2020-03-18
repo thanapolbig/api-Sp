@@ -1,0 +1,73 @@
+{
+    "name": "basic-network",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Org2",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "origin": {
+            "orderers": [
+                "orderer.example.com"
+            ],
+            "peers": {
+                "peer0.org2.example.com": {},
+                "peer1.org2.example.com": {},
+                "peer0.org1.example.com": {},
+                "peer1.org1.example.com": {},
+                "peer0.org3.example.com": {},
+                "peer1.org3.example.com": {}
+            }
+        }
+    },
+    "organizations": {
+        "Org2": {
+            "mspid": "Org2MSP",
+            "peers": [
+                "peer0.org2.example.com",
+                "peer1.org2.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca2.example.com"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer.example.com": {
+            "url": "grpc://178.128.62.186:7050"
+        }
+    },
+    "peers": {
+        "peer0.org2.example.com": {
+            "url": "grpc://68.183.234.149:9051"
+        },
+        "peer1.org2.example.com": {
+            "url": "grpc://68.183.234.149:10051"
+        },
+        "peer0.org1.example.com": {
+            "url": "grpc://134.209.101.63:7051"
+        },
+        "peer1.org1.example.com": {
+            "url": "grpc://134.209.101.63:8051"
+        },
+        "peer0.org3.example.com": {
+            "url": "grpc://206.189.146.77:11051"
+        },
+        "peer1.org3.example.com": {
+            "url": "grpc://206.189.146.77:12051"
+        }
+    },
+    "certificateAuthorities": {
+        "ca2.example.com": {
+            "url": "http://68.183.234.149:9054",
+            "caName": "ca2.example.com"
+        }
+    }
+}

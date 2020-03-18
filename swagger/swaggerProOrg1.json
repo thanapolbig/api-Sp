@@ -1,0 +1,4149 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "13 jan 2020",
+    "version": "2",
+    "title": "Sampran"
+  },
+  "host": "206.189.152.78:7777",
+  "tags": [
+    {
+      "name": "registerUser"
+    },
+    {
+      "name": "issueDocument"
+    },
+    {
+      "name": "Redirect Page"
+    },
+    {
+      "name": "queryDocument"
+    },
+    {
+      "name": "E-Commerce"
+    }
+
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/RegisterUser": {
+      "post": {
+        "tags": [
+          "registerUser"
+        ],
+        "summary": "register a signgle Blockchain user",
+        "description": "Register Blockchain user for Organisation Store in MongoDB",
+        "operationId": "register for some users",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "bc_user",
+            "in": "formData",
+            "description": "Blockchain user",
+            "required": true,
+            "type": "string",
+            "default": "123456"
+          },
+          {
+            "name": "OrgDepartment",
+            "in": "formData",
+            "description": "Department in Organisation",
+            "required": true,
+            "type": "string",
+            "default": "org1.department1"
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/registerUser201"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/registerUser500"
+            }
+          }
+        }
+      }
+    },
+    "/registerConsumer": {
+      "post": {
+        "tags": [
+          "Consumer"
+        ],
+        "summary": "Create a single Document Consumer",
+        "description": "Create Document Consumer in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body registerConsumer",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ConsumerInfo"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/registerConsumer201"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/registerConsumer500"
+            }
+          }
+        }
+      }
+    },
+    "/addPoint": {
+      "put": {
+        "tags": [
+          "Consumer"
+        ],
+        "summary": "Update Point a single Document Consumer",
+        "description": "Create Document Consumer in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body IssueGarden",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/addPointInfo"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "schema": {
+              "$ref": "#/definitions/addPoint200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/addPoint500"
+            }
+          }
+        }
+      }
+    },
+    "/usePoint": {
+      "put": {
+        "tags": [
+          "Consumer"
+        ],
+        "summary": "Update Point a single Document Consumer",
+        "description": "Create Document Consumer in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body IssueGarden",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/usePointInfo"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "schema": {
+              "$ref": "#/definitions/usePoint200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/usePoint500"
+            }
+          }
+        }
+      }
+    },
+    "/queryConsumer": {
+      "post": {
+        "tags": [
+          "Consumer"
+        ],
+        "summary": "get a single Document Consumer",
+        "description": "get Document Consumer form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body QueryConsumer",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/queryConsumerInfo"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/queryConsumer200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/queryConsumer500"
+            }
+          }
+        }
+      }
+    },
+    "/IssueGarden": {
+      "post": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Create a signgle Document Garden",
+        "description": "Create Document Garden store in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body IssueGarden",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/issueGardenInfo"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/issueGarden201"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/issueGarden500"
+            }
+          }
+        }
+      }
+    },
+    "/IssueProduct": {
+      "post": {
+        "tags": [
+          "E-Commerce"
+        ],
+        "summary": "Create a signgle Document Product",
+        "description": "Create Document Product in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body IssueProduct",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/issueProductInfo"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/issueProduct201"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/issueGarden500"
+            }
+          }
+        }
+      }
+    },
+    "/IssuePlanYear": {
+      "post": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Create a signgle Document PlanYear",
+        "description": "Create Document PlanYear store and relation Document Garden  Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body IssuePlanYear",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlanYear"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/IssuePlanYear201"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/IssuePlanYear500"
+            }
+          }
+        }
+      }
+    },
+    "/IssuePlanting": {
+      "post": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Create a signgle Document Planting",
+        "description": "Create Document Planting relation Document Garden and Document PlanYear store in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body IssuePlanting",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/planting"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/issuePlanting201"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/issuePlanting500"
+            }
+          }
+        }
+      }
+    },
+    "/AddManagePlanting": {
+      "put": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Update ManagePlanting in a signgle Document Planting",
+        "description": "Update ManagePlanting in Document Planting relation Document PlanYear store in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body AddManagePlanting",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddManagePlanting"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddManagePlanting200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/AddHarvest": {
+      "put": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Update Harvest in a signgle Document Planting",
+        "description": "Update Harvest in Document Planting relation Document PlanYear store in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body AddHarvest",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/harvest"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddHarvest200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/AddSelling": {
+      "post": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Update Selling in a signgle Document Planting",
+        "description": "Update Selling in Document Planting relation Document PlanYear store in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body AddSelling",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddSelling"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddSelling200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/AddSelling500"
+            }
+          }
+        }
+      }
+    },
+    "/Verify": {
+      "post": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Create a signgle Document Verify",
+        "description": "Create Document Verify store in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body Verify",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VerifyInfo"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Verify201"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Verify500"
+            }
+          }
+        }
+      }
+    },
+    "/IssueStock": {
+      "post": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Create a signgle Document Stock",
+        "description": "Create Document Stock store in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body IssueStock",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/issueStockInfo"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/issueStock201"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/issueStock500"
+            }
+          }
+        }
+      }
+    },
+    "/IssuePrepareStock": {
+      "put": {
+        "tags": [
+          "issueDocument"
+        ],
+        "summary": "Update PrepareStock in a signgle Document Planting",
+        "description": "Update PrepareStock in Document Planting relation Document PlanYear store in Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body AddPrepareStock",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddPrepareStock"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AddPrepareStock200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/queryGarden": {
+      "post": {
+        "tags": [
+          "queryDocument"
+        ],
+        "summary": "get a signgle Document Garden",
+        "description": "get Document Garden form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body QueryGarden",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/querygarden"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/queryGarden200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/queryGarden500"
+            }
+          }
+        }
+      }
+    },
+    "/queryProduct": {
+      "post": {
+        "tags": [
+          "E-Commerce"
+        ],
+        "summary": "get a signgle Document Product",
+        "description": "get Document Product form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body queryProduct",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/queryProduct"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/queryProduct200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/queryGarden500"
+            }
+          }
+        }
+      }
+    },
+    "/queryPlanYear": {
+      "post": {
+        "tags": [
+          "queryDocument"
+        ],
+        "summary": "get a signgle Document Planting",
+        "description": "get Document Planting form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body Query PlanYear",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/queryPlanYear"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/queryPlanYear200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/queryPlanYear500"
+            }
+          }
+        }
+      }
+    },
+    "/queryPlanting": {
+      "post": {
+        "tags": [
+          "queryDocument"
+        ],
+        "summary": "get a signgle Document Selling",
+        "description": "get Document Selling form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body Query Planting",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/queryplanting"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/queryPlanting200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/queryPlanting500"
+            }
+          }
+        }
+      }
+    },
+    "/QueryHarvest": {
+      "post": {
+        "tags": [
+          "queryDocument"
+        ],
+        "summary": "get a signgle Document Harvest",
+        "description": "get Document Harvest form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body QueryHarvest",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/queryharvest"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/queryHarvest200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/harvest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/queryHarvest500"
+            }
+          }
+        }
+      }
+    },
+    "/querySelling": {
+      "post": {
+        "tags": [
+          "queryDocument"
+        ],
+        "summary": "get a signgle Document Selling",
+        "description": "get Document Selling form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body QuerySelling",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/querySelling"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/querySelling200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/querySelling500"
+            }
+          }
+        }
+      }
+    },
+    "/queryStock": {
+      "post": {
+        "tags": [
+          "queryDocument"
+        ],
+        "summary": "get a signgle Document Stock",
+        "description": "get Document Stock form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body QueryStock",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/querystock"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/queryStock200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/queryStock500"
+            }
+          }
+        }
+      }
+    },
+    "/queryVerify": {
+      "post": {
+        "tags": [
+          "queryDocument"
+        ],
+        "summary": "get a signgle Document Verify",
+        "description": "get Document Verify form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body queryVerify",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/queryVerify"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/queryVerify200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/queryVerify500"
+            }
+          }
+        }
+      }
+    },
+    
+    "/queryMainpage": {
+      "post": {
+        "tags": [
+          "Redirect Page"
+        ],
+        "summary": "get a signgle Document Garden",
+        "description": "get Document Garden form Blockchain Network",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "request body querymainpage",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/querymainpage"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "header",
+            "description": "API Key an authorization for api server send with header request",
+            "required": true,
+            "type": "string",
+            "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/querymainpage200"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/badRequest400"
+            }
+          },
+          "401": {
+            "description": "unAuthenticate",
+            "schema": {
+              "$ref": "#/definitions/unAuthenticate401"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/querymainpage500"
+            }
+          }
+        }
+      }
+    },
+
+  "/queryPlantHistory": {
+    "post": {
+      "tags": [
+        "Redirect Page"
+      ],
+      "summary": "get a signgle Document PlantHistory",
+      "description": "get Document PlantHistory form Blockchain Network",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "parameters": [
+        {
+          "in": "body",
+          "name": "body",
+          "description": "request body QueryPlantHistory",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/queryPlanthistory"
+          }
+        },
+        {
+          "name": "apikey",
+          "in": "header",
+          "description": "API Key an authorization for api server send with header request",
+          "required": true,
+          "type": "string",
+          "default": "558344f429d66e42b53ff6449710cea0f79211c2163d3d92b4180eaee3b6afd1"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "#/definitions/queryPlantHistory200"
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "schema": {
+            "$ref": "#/definitions/plantHistory400"
+          }
+        },
+        "401": {
+          "description": "unAuthenticate",
+          "schema": {
+            "$ref": "#/definitions/unAuthenticate401"
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "schema": {
+            "$ref": "#/definitions/queryPlantHistory500"
+          }
+        }
+      }
+    }
+  }
+},
+  "definitions": {
+    "unAuthenticate401": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 401
+        },
+        "message": {
+          "type": "string",
+          "example": "Failed to Authenticate API KEY"
+        }
+      }
+    },
+    "badRequest400": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 400
+        },
+        "message": {
+          "type": "string",
+          "example": "<function_name>.bc_user is required"
+        }
+      }
+    },
+    "registerUser201": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Successfully registered blockchain user 1234564562611 and insert it into mongoDB"
+        }
+      }
+    },
+    "registerUser500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.registerUser] [Error] An identity for the user 123456456 already exists in the MongoDB"
+        }
+      }
+    },
+    "issueGarden201": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [IssueGarden] GardenDoc|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "issueProduct201": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [IssueProduct] ProductDoc|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "issueGarden500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error] Error: No valid responses from any peers. 6 peer error responses:\\n    peer=peer0.org2.example.com, status=500, message=GradenKey GradenDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org2.example.com, status=500, message=GradenKey GradenDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer0.org1.example.com, status=500, message=GradenKey GradenDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org1.example.com, status=500, message=GradenKey GradenDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer0.org3.example.com, status=500, message=GradenKey GradenDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org3.example.com, status=500, message=GradenKey GradenDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist"
+        }
+      }
+    },
+    "registerConsumer201": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [registerConsumer] Sampran|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "registerConsumer500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error]  Error: No valid responses from any peers. 6 peer error responses:\\n peer=peer0.org1.example.com, status=500, message=FarmerKey       Sampran|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bb has Already Exist peer=peer1.org1.example.com, status=500, message=FarmerKey Sampran|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bb has Already Exist peer=peer0.org2.example.com, status=500, message=FarmerKey Sampran|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bb has Already Exist peer=peer1.org2.example.com, status=500, message=FarmerKey Sampran|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bb has Already Exist peer=peer0.org3.example.com, status=500, message=FarmerKey Sampran|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bb has Already Exist peer=peer1.org3.example.com, status=500, message=FarmerKey Sampran|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bb has Already Exist"
+        }
+      }
+    },
+    "addPoint200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [addPoint] Sampran|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "addPoint500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error]  Error: No valid responses from any peers. 6 peer error responses:\\n  peer=peer0.org1.example.com, status=500, message=FarmerKey :Sampransss|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bbYour user does not exist\\n     peer=peer1.org1.example.com, status=500, message=FarmerKey :Sampransss|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bbYour user does not exist\\n      peer=peer0.org2.example.com, status=500, message=FarmerKey :Sampransss|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bbYour user does not exist\\n     peer=peer1.org2.example.com, status=500, message=FarmerKey :Sampransss|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bbYour user does not exist\\n     peer=peer0.org3.example.com, status=500, message=FarmerKey :Sampransss|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bbYour user does not exist\\n     peer=peer1.org3.example.com, status=500, message=FarmerKey :Sampransss|a0ad73ff610a1a6cc09f407b3092daef1e2d495c7da06e64b6aaa3204e6916bbYour user does not exist\""
+        }
+      }
+    },
+    "usePoint200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [usePoint] Sampran|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "usePoint500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error]  Error: No valid responses from any peers. 6 peer error responses:\\n     peer=peer0.org1.example.com, status=500, message=Your Points're not enough\\n    peer=peer1.org1.example.com, status=500, message=Your Points're not enough\\n peer=peer0.org2.example.com, status=500, message=Your Points're not enough\\n    peer=peer1.org2.example.com, status=500, message=Your Points're not enough\\n     peer=peer0.org3.example.com, status=500, message=Your Points're not enough\\n     peer=peer1.org3.example.com, status=500, message=Your Points're not enough"
+        }
+      }
+    },
+    "plantHistory400": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 400
+        },
+        "message": {
+          "type": "string",
+          "example": "<function_name>.plant_id garden_id planyear_date is required"
+        }
+      }
+    },
+    "queryPlantHistory500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error] Error: No valid responses from any peers. 6 peer error responses:\\n    peer=peer0.org1.example.com, status=500, message=Plantingkey PlantDoc|d700e360918b491470b0d680668e56dcbbc161f56493afbca2a75fa642f63b66 is not found\\n    peer=peer1.org1.example.com, status=500, message=Plantingkey PlantDoc|d700e360918b491470b0d680668e56dcbbc161f56493afbca2a75fa642f63b66 is not found\\n    peer=peer0.org2.example.com, status=500, message=Plantingkey PlantDoc|d700e360918b491470b0d680668e56dcbbc161f56493afbca2a75fa642f63b66 is not found\\n    peer=peer1.org2.example.com, status=500, message=Plantingkey PlantDoc|d700e360918b491470b0d680668e56dcbbc161f56493afbca2a75fa642f63b66 is not found\\n    peer=peer0.org3.example.com, status=500, message=Plantingkey PlantDoc|d700e360918b491470b0d680668e56dcbbc161f56493afbca2a75fa642f63b66 is not found\\n    peer=peer1.org3.example.com, status=500, message=Plantingkey PlantDoc|d700e360918b491470b0d680668e56dcbbc161f56493afbca2a75fa642f63b66 is not found\" }"
+        }
+      }
+    },
+    "queryPlantHistory200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/queryPlantHistory200_message"
+        }
+      }
+    },
+    "queryConsumer200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/queryConsumerInfo"
+        }
+      }
+    },
+    "queryConsumer500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: {\\\"Error\\\":\\\"Nil amount for Sampran|4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a\\\"}"
+        }
+      }
+    },
+    "IssuePlanYear201": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [IssueGarden] GardenDoc|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "IssuePlanYear500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error] Error: No valid responses from any peers. 6 peer error responses:\\n    peer=peer0.org2.example.com, status=500, message=PlanYearKey PlanYearDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org2.example.com, status=500, message=PlanYearKey PlanYearDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer0.org1.example.com, status=500, message=PlanYearKey PlanYearDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org1.example.com, status=500, message=PlanYearKey PlanYearDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer0.org3.example.com, status=500, message=PlanYearKey PlanYearDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org3.example.com, status=500, message=PlanYearKey PlanYearDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist"
+        }
+      }
+    },
+    "issueStock201": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [issueStock] GardenDoc|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "issueStock500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error] Error: No valid responses from any peers. 6 peer error responses:\\n    peer=peer0.org2.example.com, status=500, message=StockKey StockDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org2.example.com, status=500, message=StockKey StockDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer0.org1.example.com, status=500, message=StockKey StockDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org1.example.com, status=500, message=StockKey StockDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer0.org3.example.com, status=500, message=StockKey StockDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist\\n    peer=peer1.org3.example.com, status=500, message=StockKey StockDoc|61db107db52f151c6636352039ebf9855c66fa7455b2d1bd9e1c090c087c2e3f has already exist"
+        }
+      }
+    },
+    "issuePlanting201": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [IssueGarden] GardenDoc|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "issuePlanting500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error] Error: No valid responses from any peers. 6 peer error responses:\\n    peer=peer0.org2.example.com, status=500, message=PlantKey PlantDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer1.org2.example.com, status=500, message=PlantKey PlantDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer0.org1.example.com, status=500, message=PlantKey PlantDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer1.org1.example.com, status=500, message=PlantKey PlantDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer0.org3.example.com, status=500, message=PlantKey PlantDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer1.org3.example.com, status=500, message=PlantKey PlantDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist"
+        }
+      }
+    },
+    "harvest400": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 400
+        },
+        "message": {
+          "type": "string",
+          "example": "<function_name>.harvest_id is required"
+        }
+      }
+    },
+    "queryHarvest500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: {\\\"Error\\\":\\\"Nil amount for Harvest|d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35\\\"}"
+        }
+      }
+    },
+    "queryHarvest200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/queryHarvest200_message"
+        }
+      }
+    },
+    "AddPrepareStock200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [AddPrepareStock] UPDATE PlantingDoc|d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35 : Transaction has been submitted"
+        }
+      }
+    },
+    "AddManagePlanting200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [AddManagePlanting] UPDATE PlantingDoc|d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35 : Transaction has been submitted"
+        }
+      }
+    },
+    "AddHarvest200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [AddHarvest] UPDATE PlantYearDoc|5cb7b2e28d443b75aea0db76e3715e6a5ce3d4c0c409acd526f4efc058fdf554 and PlantingDoc|d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35 : Transaction has been submitted"
+        }
+      }
+    },
+    "AddSelling200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [AddSelling] CREATE Selling|5f6b518083156b12c0b9fd76128fd351c6dcec5325fc12869c3d96b97d2f1017 and UPDATE PlantingDoc|472b01093cf63449a189e5b5e08ce325346094eb83b90d3304a92659415870e2  : Transaction has been submitted"
+        }
+      }
+    },
+    "AddSelling500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error] Error: No valid responses from any peers. 6 peer error responses:\\n    peer=peer0.org1.example.com, status=500, message=sellingDocKey Selling|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b has Already Exist in state Blockchain\\n    peer=peer1.org1.example.com, status=500, message=sellingDocKey Selling|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b has Already Exist in state Blockchain\\n    peer=peer0.org2.example.com, status=500, message=sellingDocKey Selling|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b has Already Exist in state Blockchain\\n    peer=peer1.org2.example.com, status=500, message=sellingDocKey Selling|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b has Already Exist in state Blockchain\\n    peer=peer0.org3.example.com, status=500, message=sellingDocKey Selling|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b has Already Exist in state Blockchain\\n    peer=peer1.org3.example.com, status=500, message=sellingDocKey Selling|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b has Already Exist in state Blockchain"
+        }
+      }
+    },
+    "Verify201": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 201
+        },
+        "message": {
+          "type": "string",
+          "example": "Request for [Verify] VerifyDoc|6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b : Transaction has been submitted"
+        }
+      }
+    },
+    "Verify500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 500
+        },
+        "message": {
+          "type": "string",
+          "example": "[Blockchain.invoke] Chaincode failed to submit transaction [Error] Error: No valid responses from any peers. 6 peer error responses:\\n    peer=peer0.org2.example.com, status=500, message=VerifyKey VerifyDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer1.org2.example.com, status=500, message=VerifyKey VerifyDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer0.org1.example.com, status=500, message=VerifyKey VerifyDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer1.org1.example.com, status=500, message=VerifyKey VerifyDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer0.org3.example.com, status=500, message=VerifyKey VerifyDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist \\n    peer=peer1.org3.example.com, status=500, message=VerifyKey VerifyDoc|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fcehas Already Exist"
+        }
+      }
+    },
+    "queryGarden200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/queryGarden200_massage"
+        }
+      }
+    },
+    "queryGarden500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: {\\\"Error\\\":\\\"Nil amount for GardenDoc|4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a\\\"}"
+        }
+      }
+    },
+    "queryStock200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/queryStock200_message"
+        }
+      }
+    },
+    "queryStock500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: {\\\"Error\\\":\\\"Nil amount for GardenDoc|4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a\\\"}"
+        }
+      }
+    },
+    "queryPlanYear200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/queryPlanYear200_message"
+        }
+      }
+    },
+    "queryProduct200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "properties": {
+            "hash_planting": {
+              "type": "array",
+              "items": {
+                "example": "642f33d0eaeea718fa5ff2474e2a5a89c3044cd9007e9dfa4d681a006a465872"
+              }
+            },
+            "product_name": {
+              "type": "string",
+              "example": "Weedy"
+            },
+            "lotNo": {
+              "type": "string",
+              "example": "1"
+            },
+            "product_images": {
+              "type": "string",
+              "example": "cp/git/stock/produck2.png"
+            }
+          }
+        }
+      }
+    },
+    "querySelling200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/querySelling200_message"
+        }
+      }
+    },
+    "querySelling500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "message": {
+          "type": "string",
+          "example": "\"[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: Selling|4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce\""
+        }
+      }
+    },
+    "queryVerify200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/queryVerify200_message"
+        }
+      }
+    },
+    "queryVerify500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: {\\\"Error\\\":\\\"Nil amount for VerifyDoc|d98d1288eaaadd8b10b8691d6d48762fdd653712a8cfed3e8095b9e96b47f248\\\"}"
+        }
+      }
+    },
+    "queryPlanting500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: {\\\"Error\\\":\\\"Nil amount for PlantDoc|4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a\\\"}"
+        }
+      }
+    },
+    "queryPlanting200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/queryPlanting200_message"
+        }
+      }
+    },
+    "queryPlanYear500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: {\\\"Error\\\":\\\"Nil amount for PlanYearDoc|d98d1288eaaadd8b10b8691d6d48762fdd653712a8cfed3e8095b9e96b47f248\\\"}"
+        }
+      }
+    },
+    "querymainpage200": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "example": 200
+        },
+        "message": {
+          "$ref": "#/definitions/querymainpage200"
+        }
+      }
+    },
+    "querymainpage500": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "example": "500"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "[Blockchain.query] Chaincode failed to evaluate a transaction [Error] Error: {\\\"Error\\\":\\\"Nil amount for \\\"}"
+        }
+      }
+    },
+    "PlanYear": {
+      "type": "object",
+      "required": [
+        "bc_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "planyear_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "สมชาย1"
+        },
+        "user_name": {
+          "type": "string",
+          "example": "นายสมชาย สมใจ"
+        },
+        "group_name": {
+          "type": "string",
+          "example": "ไร่สมชาย"
+        },
+        "garden_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "agri_standard": {
+          "type": "string",
+          "example": "Ifoam"
+        },
+        "register_appuser": {
+          "type": "string",
+          "example": "22/01/2000"
+        }
+      }
+    },
+    "planting": {
+      "type": "object",
+      "required": [
+        "bc_user",
+        "plant_id"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "สมชาย1"
+        },
+        "plant_id": {
+          "type": "string",
+          "example": "2"
+        },
+        "plant_name": {
+          "type": "string",
+          "example": "สวน"
+        },
+        "seed_type": {
+          "type": "string",
+          "example": "ต้นกล้า"
+        },
+        "reproduction_type": {
+          "type": "string",
+          "example": "ปักชำ"
+        },
+        "seed_marketplace": {
+          "type": "string",
+          "example": "LemonFarm"
+        },
+        "garden_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "plant_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        },
+        "planyear_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        },
+        "path_images": {
+          "type": "string",
+          "example": "/home/sampran/images.jp"
+        },
+        "predict_harvest": {
+          "type": "string",
+          "example": "2019-10-19"
+        },
+        "predict_quantity": {
+          "type": "integer",
+          "example": 1000
+        },
+        "update_date": {
+          "type": "string",
+          "example": "2018-10-13"
+        }
+      }
+    },
+    "ConsumerInfo": {
+      "type": "object",
+      "required": [
+        "bc_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "Ohmsm0150"
+        },
+        "Platform": {
+          "type": "string",
+          "example": "Sampran"
+        }
+      },
+      "title": "ConsumerInfo"
+    },
+    "addPointInfo": {
+      "type": "object",
+      "required": [
+        "bc_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "Ohmsm0150"
+        },
+        "Platform": {
+          "type": "string",
+          "example": "Sampran"
+        },
+        "Point": {
+          "type": "integer",
+          "example": 100
+        }
+      },
+      "title": "addPointInfo"
+    },
+    "usePointInfo": {
+      "type": "object",
+      "required": [
+        "bc_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "Ohmsm0150"
+        },
+        "Platform": {
+          "type": "string",
+          "example": "Sampran"
+        },
+        "Point": {
+          "type": "integer",
+          "example": 100
+        }
+      },
+      "title": "usePointInfo"
+    },
+    "queryConsumerInfo": {
+      "type": "object",
+      "required": [
+        "bc_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "Ohmsm0150"
+        },
+        "Platform": {
+          "type": "string",
+          "example": "Sampran"
+        },
+        "Point": {
+          "type": "integer",
+          "example": 100
+        }
+      },
+      "title": "queryConsumerInfo"
+    },
+    "issueGardenInfo": {
+      "type": "object",
+      "required": [
+        "bc_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "garden_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "garden_name": {
+          "type": "string",
+          "example": "ลำไย"
+        },
+        "owner": {
+          "type": "string",
+          "example": "JoJo"
+        },
+        "areas": {
+          "type": "string",
+          "example": "13ไร่ 2งาน"
+        },
+        "date_final_use_chemical": {
+          "type": "string",
+          "example": "2019-7-3"
+        },
+        "history_use_chemical": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/queryGarden200_massage_history_use_chemical"
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": "อินทรีย์"
+        },
+        "path_image": {
+          "type": "array",
+          "items": {
+            "example": "/home/itsaraphap/Desktop/messageImage_1567519885643.jpg"
+          }
+        },
+        "app_user": {
+          "type": "string",
+          "example": "bc_123"
+        },
+        "details": {
+          "type": "string",
+          "example": "พื้นที่สูงรกรากมีหน้าผา แห้งแล้ง"
+        }
+      },
+      "title": "The Planting Document Schema"
+    },
+    "issueProductInfo": {
+      "type": "object",
+      "required": [
+        "bc_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "plant_info": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "garden_id": {
+                "type": "string",
+                "example": 1
+              },
+              "planyear_date": {
+                "type": "string",
+                "example": "2018-08-04"
+              },
+              "plant_id": {
+                "type": "string",
+                "example": 1
+              }
+            }
+          }
+        },
+        "lotNo": {
+          "type": "string",
+          "example": "1"
+        },
+        "product_name": {
+          "type": "string",
+          "example": "Weedy"
+        },
+        "product_image": {
+          "type": "string",
+          "example": "cp/git/stock/produck2.png"
+        }
+      },
+      "title": "The Planting Document Schema"
+    },
+    "issueStockInfo": {
+      "type": "object",
+      "title": "The Planting Document Schema",
+      "required": [
+        "bc_user",
+        "app_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "ธนพล"
+        },
+        "Owner": {
+          "type": "string",
+          "example": "Ohmsum"
+        },
+        "Location": {
+          "type": "string",
+          "example": "Ekkamai28"
+        },
+        "CreateDate": {
+          "type": "string",
+          "example": "2019-10-19"
+        }
+      }
+    },
+    "AddPrepareStock": {
+      "type": "object",
+      "title": "The Planting Document Schema",
+      "required": [
+        "bc_user",
+        "app_user"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "ธนพล"
+        },
+        "id": {
+          "type": "string",
+          "example": 1
+        },
+        "product_unit_id": {
+          "type": "string",
+          "example": 3
+        },
+        "product_unit_name": {
+          "type": "string",
+          "example": "ห่อ"
+        },
+        "name": {
+          "type": "string",
+          "example": "พลั่ว"
+        },
+        "is_diy": {
+          "type": "string",
+          "example": "ture"
+        },
+        "buy_from": {
+          "type": "string",
+          "example": "7-11"
+        },
+        "price": {
+          "type": "string",
+          "example": 120
+        },
+        "quantity": {
+          "type": "string",
+          "example": 12
+        },
+        "image": {
+          "type": "string",
+          "example": "cp/git/stock/produck1.png"
+        }
+      }
+    },
+    "harvest": {
+      "type": "object",
+      "required": [
+        "bc_user",
+        "harvesting_product_date_data"
+      ],
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "plant_id": {
+          "type": "string",
+          "example": "2"
+        },
+        "harvest_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "lot_no": {
+          "type": "string",
+          "example": "19902"
+        },
+        "harvest_transform_check": {
+          "type": "string",
+          "example": "yes"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "harvest_date": {
+          "type": "string",
+          "example": "2020-12-20"
+        },
+        "product_grade_a": {
+          "type": "string",
+          "example": "100"
+        },
+        "product_grade_b": {
+          "type": "string",
+          "example": "100"
+        },
+        "product_grade_c": {
+          "type": "string",
+          "example": "100"
+        },
+        "product_grade_d": {
+          "type": "string",
+          "example": "100"
+        },
+        "product_grade_e": {
+          "type": "string",
+          "example": "100"
+        },
+        "product_total_bad": {
+          "type": "string",
+          "example": "100"
+        },
+        "unit": {
+          "type": "string",
+          "example": "ผล"
+        },
+        "process_image": {
+          "type": "string",
+          "example": "cp/git/stock/produck1.png"
+        },
+        "product_image": {
+          "type": "string",
+          "example": "cp/git/stock/produck2.png"
+        },
+        "harvest_status": {
+          "type": "string",
+          "example": "คงค้าง"
+        },
+        "tools": {
+          "type": "string",
+          "example": "รถไถ"
+        },
+        "garden_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "planyear_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        }
+      }
+    },
+    "AddSelling": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "selling_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "selling_list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/sell"
+          }
+        },
+        "garden_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "plant_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        },
+        "planyear_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        },
+        "plant_id": {
+          "type": "string",
+          "example": "2"
+        }
+      }
+    },
+    "AddManagePlanting": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "Jirapon0150"
+        },
+        "plant_id": {
+          "type": "string",
+          "example": "2"
+        },
+        "production_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "production_name": {
+          "type": "string",
+          "example": "รดน้ำ"
+        },
+        "activities_detail": {
+          "type": "string",
+          "example": "รดน้ำวันละ3ครั้ง"
+        },
+        "production_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        },
+        "production_factor": {
+          "type": "string",
+          "example": "ฝักบัว"
+        },
+        "garden_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "planyear_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        }
+      }
+    },
+    "VerifyInfo": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "plant_info": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "garden_id": {
+                "type": "string"
+              },
+              "planyear_date": {
+                "type": "string"
+              },
+              "plant_id": {
+                "type": "string"
+              }
+            }
+          },
+          "example": [
+            {
+              "garden_id": "1",
+              "planyear_date": "2018-08-04",
+              "plant_id": "2"
+            },
+            {
+              "garden_id": "1",
+              "planyear_date": "2018-08-04",
+              "plant_id": "3"
+            }
+          ]
+        },
+        "issue_date": {
+          "type": "string",
+          "example": "2018-12-21"
+        },
+        "id":{
+          "type": "string",
+          "example": "3"
+        },
+        "company_id":{
+          "type": "string",
+          "example": "1"
+        },
+        "user_id":{
+          "type": "string",
+          "example": "4"
+        },
+        "is_pass":{
+          "type": "string",
+          "example": "1"
+        },
+        "is_approve":{
+          "type": "string",
+          "example": "null"
+        },
+        "is_draft":{
+          "type": "string",
+          "example": "1"
+        },
+        "inspect_date": {
+          "type": "string",
+          "example": "2019-11-18"
+        },
+        "inspect_start_time": {
+          "type": "string",
+          "example": "12:00:00"
+        },
+        "inspect_end_time":{
+          "type": "string",
+          "example": "17:00:00"
+        },
+        "approve_start_date":{
+          "type": "string",
+          "example": "null"
+        },
+        "approve_end_date":{
+          "type": "string",
+          "example": "null"
+        },
+        "remark": {
+          "type": "string",
+          "example": "null"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "inspect_type": {
+              "type": "object",
+              "properties": {
+                "type": {
+                "type": "string",
+                "example": "ตรวจโดยไม่แจ้งล่วงหน้า" 
+                },
+                "year": {
+                  "type": "string",
+                  "example": "null" 
+                }
+              }
+            },
+            "standard_type": {
+              "type": "object",
+              "properties": {
+                "type": {
+                "type": "string",
+                "example": "PGS" 
+                },
+                "year": {
+                  "type": "string",
+                  "example": "null" 
+                }
+              }
+            },
+            "consideration_for_approve": {
+              "type": "object",
+              "properties": {
+                "plan_product_support_standard": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product_id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "example": [
+                    {
+                      "product_id": "1",
+                      "name": "ผักสลัด"
+                    },
+                    {
+                      "product_id": "15",
+                      "name": "สลัด"
+                    }
+                  ]
+                },
+                "approvement_and_condition": {
+                  "type": "string",
+                  "example": "123" 
+                },
+                "period_of_change": {
+                  "type": "string",
+                  "example": "123" 
+                },
+                "plan_product_unsupport_standard": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product_id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "example": [
+                    {
+                      "product_id": "ยี่หร่า",
+                      "name": "ยี่หร่า"
+                    }
+                  ]
+                },
+                "next_inspection": {
+                  "type": "string",
+                  "example": "fdsafdaf" 
+                }
+              }
+            },
+            "farm_document": {
+              "type": "object",
+              "properties": {
+                "prepare_plating": {
+                "type": "string",
+                "example": "มี" 
+                },
+                "farm_plan_document": {
+                  "type": "string",
+                  "example": "มี" 
+                },
+                "organic_standard": {
+                  "type": "string",
+                  "example": "มี" 
+                },
+                "prepare_plating_is_completely": {
+                  "type": "string",
+                  "example": "ต้องปรับปรุง" 
+                },
+                "prepare_plating_describe": {
+                  "type": "string",
+                  "example": "รายละเอียดปรับปรุง" 
+                },
+                "farm_plan_document_is_completely": {
+                  "type": "string",
+                  "example": "ต้องปรับปรุง" 
+                },
+                "farm_plan_document_describe": {
+                  "type": "string",
+                  "example": "รายละเอียดปรับปรุง" 
+                },
+                "organic_standard_describe": {
+                  "type": "string",
+                  "example": "รายละเอียดปรับปรุง" 
+                }
+              }
+            },
+            "planting_data": {
+              "type": "object",
+              "properties": {
+                "info": {
+                "type": "string",
+                "example": "ข้อมูลตามแผน" 
+                }
+              }
+            },
+            "inspection_scope": {
+              "type": "object",
+              "properties": {
+                "is_all_oranic_garden": {
+                "type": "string",
+                "example": "true" 
+                },
+                "remark": {
+                  "type": "string",
+                  "example": "123" 
+                  }
+              }
+            },
+            "user_sign_data": {
+              "type": "object",
+              "properties": {
+                "farmer": {
+                  "type": "object",
+                  "properties": {
+                    "sign_image": {
+                    "type": "string",
+                    "example": "/upload/inspection_verifier_sign/inspection_verifier_sign-5dde43d6710a62.93582640.png" 
+                    },
+                    "sign_date": {
+                      "type": "string",
+                      "example": "2019-12-17" 
+                      }
+                  }
+                },
+                "inspector": {
+                  "type": "object",
+                  "properties": {
+                    "sign_image": {
+                    "type": "string",
+                    "example": "null" 
+                    },
+                    "sign_date": {
+                      "type": "string",
+                      "example": "2018-12-17" 
+                    },
+                    "sign_image_upload": {
+                      "type": "string",
+                      "example": "/upload/inspection_verifier_sign/inspection_verifier_sign-5dde43d6710a62.93582640.png" 
+                      }
+                  }
+                },
+                "endorser": {
+                  "type": "object",
+                  "properties": {
+                    "sign_image": {
+                    "type": "string",
+                    "example": "null" 
+                    },
+                    "sign_date": {
+                      "type": "string",
+                      "example": "2019-12-17" 
+                    },
+                    "sign_image_upload": {
+                      "type": "string",
+                      "example": "/upload/inspection_verifier_sign/inspection_verifier_sign-5dde43d6710a62.93582640.png" 
+                      }
+                  }
+                }
+                }
+            }
+          }
+          },
+        "user_fullname": {
+            "type": "string",
+            "example": "บุญล้อม  เรืองแสง"
+          },
+        "user_farmer_code": {
+            "type": "string",
+            "example": "FAR0004"
+          },
+        "user_address": {
+            "type": "string",
+            "example": "27 หมู่5 "
+          },
+        "user_latitude": {
+            "type": "string",
+            "example": "12.59968640"
+          },
+        "user_longitude": {
+            "type": "string",
+            "example": "99.54296710"
+          },
+        "zip_code":{
+            "type": "string",
+            "example": "76170"
+          },
+        "district_name": {
+            "type": "string",
+            "example": "ป่าเด็ง"
+          },
+        "amphur_name": {
+            "type": "string",
+            "example": "แก่งกระจาน"
+          },
+        "province_name": {
+            "type": "string",
+            "example": "เพชรบุรี"
+          },
+        "user_phone": {
+            "type": "string",
+            "example": "0868665456"
+          },
+        "group_id": {
+            "type": "string",
+            "example": "1"
+          },
+        "group_name": {
+            "type": "string",
+            "example": "organic"
+          },
+        "garden_name": {
+            "type": "string",
+            "example": "แปลงที่ 1"
+          },
+        "problem_images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "inspect_verifier_id": {
+                "type": "string"
+              },
+              "image_path": {
+                "type": "string"
+              }
+            }
+          },
+          "example": [
+            {
+              "id": "6",
+              "inspect_verifier_id": "3",
+              "image_path": "/upload/inspection_verifier_problem/inspection_verifier_problem-5de09c75b41b60.30134576.png"
+            },
+            {
+              "id": "6",
+              "inspect_verifier_id": "3",
+              "image_path": "/upload/inspection_verifier_problem/inspection_verifier_problem-5de0d0e3265458.89572852.png"
+            }
+          ]
+        },
+        "report_images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "inspect_verifier_id": {
+                "type": "string"
+              },
+              "image_path": {
+                "type": "string"
+              }
+            }
+          },
+          "example": [
+            {
+              "id": "6",
+              "inspect_verifier_id": "3",
+              "image_path": "/upload/inspection_verifier_report/inspection_verifier_report-5de09c7e7c6894.79609671.png"
+            }
+          ]
+        }
+      }
+    },
+    "querygarden": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "garden_id": {
+          "type": "string",
+          "example": "1"
+        }
+      }
+    },
+    "queryProduct": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "lotNo": {
+          "type": "string",
+          "example": "1"
+        }
+      }
+    },
+    "querystock": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "ธนพล"
+        }
+      }
+    },
+    "queryplanting": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "plant_id": {
+          "type": "string",
+          "example": "2"
+        },
+        "garden_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "planyear_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        }
+      }
+    },
+    "queryharvest": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "harvest_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "lot_no": {
+          "type": "string",
+          "example": "19902"
+        }
+      }
+    },
+    "queryPlanYear": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "garden_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "planyear_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        }
+      }
+    },
+    "querySelling": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "selling_id": {
+          "type": "integer",
+          "example": 1
+        }
+      }
+    },
+    "queryVerify": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "user_id": {
+          "type": "string",
+          "example": "4"
+        },
+        "issue_date": {
+          "type": "string",
+          "example": "2018-12-21"
+        }
+      }
+    },
+    "querymainpage": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "harvest_id": {
+          "type": "string",
+          "example": "1"
+        },
+        "lot_no": {
+          "type": "string",
+          "example": "19902"
+        }
+      }
+    },
+    "queryPlanthistory": {
+      "type": "object",
+      "properties": {
+        "bc_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "hash_planting": {
+          "type": "string",
+          "example": "<copy planting_hash จาก querymMinpage>"
+        }
+      }
+    },
+    "queryGarden200_massage_history_use_chemical": {
+      "required": [
+        "date_final_use_chemical"
+      ],
+      "properties": {
+        "name_use_chemical": {
+          "type": "string",
+          "example": "toxic chemical"
+        }
+      }
+    },
+    "queryGarden200_massage": {
+      "properties": {
+        "harvestId": {
+          "type": "array",
+          "items": {
+            "example": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          }
+        },
+        "product_name": {
+          "type": "string",
+          "example": "Weedy"
+        },
+        "product_image": {
+          "type": "string",
+          "example": "cp/git/stock/produck2.png"
+        }
+      }
+    },
+    "queryStock200_message_Stock_material": {
+      "required": [
+        "date_final_use_chemical"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "0"
+        },
+        "name": {
+          "type": "string",
+          "example": "พลั่ว"
+        },
+        "is_diy": {
+          "type": "string",
+          "example": "ture"
+        },
+        "buyfrom": {
+          "type": "string",
+          "example": "  "
+        },
+        "price": {
+          "type": "string",
+          "example": "120"
+        },
+        "quantity": {
+          "type": "string",
+          "example": "12"
+        },
+        "image": {
+          "type": "string",
+          "example": "cp/git/stock/produck1.png"
+        }
+      }
+    },
+    "queryStock200_message": {
+      "properties": {
+        "CreateData": {
+          "type": "string",
+          "example": "2019-10-19"
+        },
+        "Location": {
+          "type": "string",
+          "example": "Ekkamai28"
+        },
+        "owner": {
+          "type": "string",
+          "example": "ธนพล"
+        },
+        "Stock_material": {
+          "$ref": "#/definitions/queryStock200_message_Stock_material"
+        }
+      }
+    },
+    "queryPlanYear200_message_planting_model": {
+      "properties": {
+        "plant_id": {
+          "type": "string",
+          "example": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        "status": {
+          "type": "string",
+          "example": "ขายแล้ว"
+        },
+        "plant_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        }
+      }
+    },
+    "queryPlanYear200_message": {
+      "properties": {
+        "update_date": {
+          "type": "string",
+          "example": "1111-11-11"
+        },
+        "username": {
+          "type": "string",
+          "example": "สมชาย1"
+        },
+        "name": {
+          "type": "string",
+          "example": "สมชาย นะครับ"
+        },
+        "group": {
+          "type": "string",
+          "example": "ไร่สมชายาน"
+        },
+        "garden": {
+          "type": "string",
+          "example": "garden_idl1"
+        },
+        "planting_model": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/queryPlanYear200_message_planting_model"
+          }
+        },
+        "agri_standard": {
+          "type": "string",
+          "example": "Ifoam"
+        },
+        "register_appuser": {
+          "type": "string",
+          "example": "22/01/2000"
+        }
+      }
+    },
+    "queryPlanting200_message_production_activities": {
+      "properties": {
+        "app_user": {
+          "type": "string",
+          "example": "Jirapon0150"
+        },
+        "production_id": {
+          "type": "number",
+          "example": 1
+        },
+        "production_name": {
+          "type": "string",
+          "example": "รดน้ำ"
+        },
+        "production_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        },
+        "production_factor": {
+          "type": "string",
+          "example": "ฝักบัว"
+        }
+      }
+    },
+    "queryPlanting200_message": {
+      "properties": {
+        "doc_ref": {
+          "type": "string",
+          "example": "5cb7b2e28d443b75aea0db76e3715e6a5ce3d4c0c409acd526f4efc058fdf554"
+        },
+        "plan_id": {
+          "type": "string",
+          "example": "2"
+        },
+        "plant_date": {
+          "type": "string",
+          "example": "2018-08-04"
+        },
+        "plant_name": {
+          "type": "string",
+          "example": "สวน"
+        },
+        "seed_type": {
+          "type": "string",
+          "example": "qwerty"
+        },
+        "predict_harvest": {
+          "type": "string",
+          "example": "2019-10-19"
+        },
+        "predict_quantity": {
+          "type": "number",
+          "example": 1000
+        },
+        "production_activities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/queryPlanting200_message_production_activities"
+          }
+        },
+        "harvest": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          }
+        },
+        "product_grade_a": {
+          "type": "number",
+          "example": 100
+        },
+        "product_grade_b": {
+          "type": "number",
+          "example": 100
+        },
+        "product_grade_c": {
+          "type": "number",
+          "example": 100
+        },
+        "product_grade_d": {
+          "type": "number",
+          "example": 100
+        },
+        "product_grade_e": {
+          "type": "number",
+          "example": 100
+        },
+        "product_total_best": {
+          "type": "number",
+          "example": 500
+        },
+        "product_total_bad": {
+          "type": "number",
+          "example": 100
+        },
+        "product_total": {
+          "type": "number",
+          "example": 600
+        },
+        "unit": {
+          "type": "string",
+          "example": "ผล"
+        },
+        "selling": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          }
+        },
+        "sold_grade_a": {
+          "type": "number",
+          "example": 50
+        },
+        "sold_grade_b": {
+          "type": "number",
+          "example": 30
+        },
+        "sold_grade_c": {
+          "type": "number",
+          "example": 20
+        },
+        "sold_grade_d": {
+          "type": "number",
+          "example": 50
+        },
+        "sold_grade_e": {
+          "type": "number",
+          "example": 50
+        },
+        "sold_total": {
+          "type": "number",
+          "example": 200
+        },
+        "path_images": {
+          "type": "string",
+          "example": "cp/git/stock/produck1.png"
+        },
+        "update_date": {
+          "type": "string",
+          "example": "2020-12-20"
+        }
+      }
+    },
+    "queryHarvest200_message": {
+      "properties": {
+        "harvest_date": {
+          "type": "string",
+          "example": "2020-12-20"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "123456"
+        },
+        "harvest_transform_check": {
+          "type": "string",
+          "example": "yes"
+        },
+        "product_grade_a": {
+          "type": "number",
+          "example": 100
+        },
+        "product_grade_b": {
+          "type": "number",
+          "example": 100
+        },
+        "product_grade_c": {
+          "type": "number",
+          "example": 100
+        },
+        "product_grade_d": {
+          "type": "number",
+          "example": 100
+        },
+        "product_grade_e": {
+          "type": "number",
+          "example": 100
+        },
+        "product_total_good": {
+          "type": "number",
+          "example": 500
+        },
+        "product_total_bad": {
+          "type": "number",
+          "example": 100
+        },
+        "product_total": {
+          "type": "number",
+          "example": 600
+        },
+        "unit": {
+          "type": "string",
+          "example": "ผล"
+        },
+        "process_image": {
+          "type": "string",
+          "example": "cp/git/stock/produck1.png"
+        },
+        "product_image": {
+          "type": "string",
+          "example": "cp/git/stock/produck2.png"
+        },
+        "harvest_status": {
+          "type": "string",
+          "example": "คงค้าง"
+        },
+        "tools": {
+          "type": "string",
+          "example": "รถไถ"
+        }
+      }
+    },
+    "querySelling200_message": {
+      "properties": {
+        "plant_document_ref": {
+          "type": "string",
+          "example": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+        },
+        "selling_list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/sell"
+          }
+        }
+      }
+    },
+    "sell": {
+      "properties": {
+        "sold_grade_a": {
+          "type": "integer",
+          "example": 50
+        },
+        "sold_grade_b": {
+          "type": "integer",
+          "example": 30
+        },
+        "sold_grade_c": {
+          "type": "integer",
+          "example": 20
+        },
+        "sold_grade_d": {
+          "type": "integer",
+          "example": 50
+        },
+        "sold_grade_e": {
+          "type": "integer",
+          "example": 50
+        },
+        "buyer": {
+          "type": "string",
+          "example": "darkmarket"
+        },
+        "sold_date": {
+          "type": "string",
+          "example": "2019-10-11"
+        },
+        "lot_no": {
+          "type": "string",
+          "example": "2020-12-20"
+        },
+        "app_user": {
+          "type": "string",
+          "example": "123456"
+        }
+      }
+    },
+    "queryVerify200_message": {
+        "type": "object",
+        "properties": {
+          "bc_user": {
+            "type": "string",
+            "example": "123456"
+          },
+          "planyear_date": {
+            "type": "string",
+            "example": "2018-08-04"
+          },
+          "issue_date": {
+            "type": "string",
+            "example": "2018-12-21"
+          },
+          "id":{
+            "type": "string",
+            "example": "3"
+          },
+          "company_id":{
+            "type": "string",
+            "example": "1"
+          },
+          "user_id":{
+            "type": "string",
+            "example": "4"
+          },
+          "garden_id":{
+            "type": "string",
+            "example": "1"
+          },
+          "is_pass":{
+            "type": "string",
+            "example": "1"
+          },
+          "is_approve":{
+            "type": "string",
+            "example": "null"
+          },
+          "is_draft":{
+            "type": "string",
+            "example": "1"
+          },
+          "inspect_date": {
+            "type": "string",
+            "example": "2019-11-18"
+          },
+          "inspect_start_time": {
+            "type": "string",
+            "example": "12:00:00"
+          },
+          "inspect_end_time":{
+            "type": "string",
+            "example": "17:00:00"
+          },
+          "approve_start_date":{
+            "type": "string",
+            "example": "null"
+          },
+          "approve_end_date":{
+            "type": "string",
+            "example": "null"
+          },
+          "remark": {
+            "type": "string",
+            "example": "null"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "inspect_type": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                  "type": "string",
+                  "example": "ตรวจโดยไม่แจ้งล่วงหน้า" 
+                  },
+                  "year": {
+                    "type": "string",
+                    "example": "null" 
+                  }
+                }
+              },
+              "standard_type": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                  "type": "string",
+                  "example": "PGS" 
+                  },
+                  "year": {
+                    "type": "string",
+                    "example": "null" 
+                  }
+                }
+              },
+              "consideration_for_approve": {
+                "type": "object",
+                "properties": {
+                  "plan_product_support_standard": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "product_id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "product_id": "1",
+                        "name": "ผักสลัด"
+                      },
+                      {
+                        "product_id": "15",
+                        "name": "สลัด"
+                      }
+                    ]
+                  },
+                  "approvement_and_condition": {
+                    "type": "string",
+                    "example": "123" 
+                  },
+                  "period_of_change": {
+                    "type": "string",
+                    "example": "123" 
+                  },
+                  "plan_product_unsupport_standard": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "product_id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "product_id": "ยี่หร่า",
+                        "name": "ยี่หร่า"
+                      }
+                    ]
+                  },
+                  "next_inspection": {
+                    "type": "string",
+                    "example": "fdsafdaf" 
+                  }
+                }
+              },
+              "farm_document": {
+                "type": "object",
+                "properties": {
+                  "prepare_plating": {
+                  "type": "string",
+                  "example": "มี" 
+                  },
+                  "farm_plan_document": {
+                    "type": "string",
+                    "example": "มี" 
+                  },
+                  "organic_standard": {
+                    "type": "string",
+                    "example": "มี" 
+                  },
+                  "prepare_plating_is_completely": {
+                    "type": "string",
+                    "example": "ต้องปรับปรุง" 
+                  },
+                  "prepare_plating_describe": {
+                    "type": "string",
+                    "example": "รายละเอียดปรับปรุง" 
+                  },
+                  "farm_plan_document_is_completely": {
+                    "type": "string",
+                    "example": "ต้องปรับปรุง" 
+                  },
+                  "farm_plan_document_describe": {
+                    "type": "string",
+                    "example": "รายละเอียดปรับปรุง" 
+                  },
+                  "organic_standard_describe": {
+                    "type": "string",
+                    "example": "รายละเอียดปรับปรุง" 
+                  }
+                }
+              },
+              "planting_data": {
+                "type": "object",
+                "properties": {
+                  "info": {
+                  "type": "string",
+                  "example": "ข้อมูลตามแผน" 
+                  }
+                }
+              },
+              "inspection_scope": {
+                "type": "object",
+                "properties": {
+                  "is_all_oranic_garden": {
+                  "type": "string",
+                  "example": "true" 
+                  },
+                  "remark": {
+                    "type": "string",
+                    "example": "123" 
+                    }
+                }
+              },
+              "user_sign_data": {
+                "type": "object",
+                "properties": {
+                  "farmer": {
+                    "type": "object",
+                    "properties": {
+                      "sign_image": {
+                      "type": "string",
+                      "example": "/upload/inspection_verifier_sign/inspection_verifier_sign-5dde43d6710a62.93582640.png" 
+                      },
+                      "sign_date": {
+                        "type": "string",
+                        "example": "2019-12-17" 
+                        }
+                    }
+                  },
+                  "inspector": {
+                    "type": "object",
+                    "properties": {
+                      "sign_image": {
+                      "type": "string",
+                      "example": "null" 
+                      },
+                      "sign_date": {
+                        "type": "string",
+                        "example": "2018-12-17" 
+                      },
+                      "sign_image_upload": {
+                        "type": "string",
+                        "example": "/upload/inspection_verifier_sign/inspection_verifier_sign-5dde43d6710a62.93582640.png" 
+                        }
+                    }
+                  },
+                  "endorser": {
+                    "type": "object",
+                    "properties": {
+                      "sign_image": {
+                      "type": "string",
+                      "example": "null" 
+                      },
+                      "sign_date": {
+                        "type": "string",
+                        "example": "2019-12-17" 
+                      },
+                      "sign_image_upload": {
+                        "type": "string",
+                        "example": "/upload/inspection_verifier_sign/inspection_verifier_sign-5dde43d6710a62.93582640.png" 
+                        }
+                    }
+                  }
+                  }
+              }
+            }
+            },
+            "user_fullname": {
+              "type": "string",
+              "example": "บุญล้อม  เรืองแสง"
+            },
+            "user_farmer_code": {
+              "type": "string",
+              "example": "FAR0004"
+            },
+            "user_address": {
+              "type": "string",
+              "example": "27 หมู่5 "
+            },
+            "user_latitude": {
+              "type": "string",
+              "example": "12.59968640"
+            },
+            "user_longitude": {
+              "type": "string",
+              "example": "99.54296710"
+            },
+            "zip_code":{
+              "type": "string",
+              "example": "76170"
+            },
+            "district_name": {
+              "type": "string",
+              "example": "ป่าเด็ง"
+            },
+            "amphur_name": {
+              "type": "string",
+              "example": "แก่งกระจาน"
+            },
+            "province_name": {
+              "type": "string",
+              "example": "เพชรบุรี"
+            },
+            "user_phone": {
+              "type": "string",
+              "example": "0868665456"
+            },
+            "group_id": {
+              "type": "string",
+              "example": "1"
+            },
+            "group_name": {
+              "type": "string",
+              "example": "organic"
+            },
+            "garden_name": {
+              "type": "string",
+              "example": "แปลงที่ 1"
+            }
+          },
+          "problem_images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "inspect_verifier_id": {
+                  "type": "string"
+                },
+                "image_path": {
+                  "type": "string"
+                }
+              }
+            },
+            "example": [
+              {
+                "id": "6",
+                "inspect_verifier_id": "3",
+                "image_path": "/upload/inspection_verifier_problem/inspection_verifier_problem-5de09c75b41b60.30134576.png"
+              },
+              {
+                "id": "6",
+                "inspect_verifier_id": "3",
+                "image_path": "/upload/inspection_verifier_problem/inspection_verifier_problem-5de0d0e3265458.89572852.png"
+              }
+            ]
+          },
+          "report_images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "inspect_verifier_id": {
+                  "type": "string"
+                },
+                "image_path": {
+                  "type": "string"
+                }
+              }
+            },
+            "example": [
+              {
+                "id": "6",
+                "inspect_verifier_id": "3",
+                "image_path": "/upload/inspection_verifier_report/inspection_verifier_report-5de09c7e7c6894.79609671.png"
+              }
+            ]
+          }
+    },
+    "queryPlantHistory200_message_production": {
+      "properties": {
+        "activities_type": {
+          "type": "string",
+          "example": "การดูแล"
+        },
+        "activities_date": {
+          "type": "string",
+          "example": "2018-08-0"
+        },
+        "activities_name": {
+          "type": "string",
+          "example": "รดน้ำ"
+        },
+        "activities_tool": {
+          "type": "string",
+          "example": "ฝักบัว"
+        }
+      }
+    },
+    "queryPlantHistory200_message_harvest": {
+      "properties": {
+        "activities_type": {
+          "type": "string",
+          "example": "การเก็บเกี่ยว"
+        },
+        "activities_date": {
+          "type": "string",
+          "example": "2020-12-20"
+        },
+        "activities_name": {
+          "type": "string",
+          "example": "เก็บเกี่ยว"
+        },
+        "activities_tool": {
+          "type": "string",
+          "example": "รถไถ"
+        }
+      }
+    },
+    "queryPlantHistory200_message_selling": {
+      "properties": {
+        "activities_type": {
+          "type": "string",
+          "example": "การขาย"
+        },
+        "activities_date": {
+          "type": "string",
+          "example": "2019-10-11"
+        },
+        "activities_name": {
+          "type": "string",
+          "example": "ขาย"
+        },
+        "activities_tool": {
+          "type": "string",
+          "example": "กระสอบ"
+        }
+      }
+    },
+    "queryPlantHistory200_message": {
+      "properties": {
+        "production_activities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/queryPlantHistory200_message_production"
+          }
+        },
+        "harvest": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/queryPlantHistory200_message_harvest"
+          }
+        },
+        "selling": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/queryPlantHistory200_message_selling"
+          }
+        }
+      }
+    }
+  }
+}

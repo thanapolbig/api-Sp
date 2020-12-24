@@ -41,7 +41,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
-    "date-and-time": "^0.7.0",
+    "date-and-time": "^0.14.2",
     "dateformat": "^3.0.3",
     "express": "^4.17.1",
     "fabric-ca-client": "^1.4.2",

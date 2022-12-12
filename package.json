@@ -43,7 +43,7 @@
     "cors": "^2.8.5",
     "date-and-time": "^0.7.0",
     "dateformat": "^3.0.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fabric-ca-client": "^1.4.2",
     "fabric-client": "^1.4.3",
     "fabric-network": "^1.4.2",

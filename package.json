@@ -48,7 +48,7 @@
     "fabric-client": "^1.4.3",
     "fabric-network": "^1.4.2",
     "mariadb": "^2.0.5",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "mock-env": "^0.2.0",
     "moment": "^2.24.0",
     "mongoose": "^5.5.14",
